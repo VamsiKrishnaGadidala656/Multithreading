@@ -30,6 +30,16 @@ public class Main {
 
         poolExecutor.shutdown();
     }
+
+    /*
+        By default corePoolSize(number of threads) are created in pool, if free threads will automatically pick the task
+        from pool,
+        but -- if threads are not free,the submitted task will go into queue(of particular size)
+            -- if threads are not free and queue was also full, then new threads will be created upto maximumPoolSize
+                and new threads will perform the new tasks.
+            -- even after creating all threads(maximumPoolSize), still new task is coming but no thread is free,then it will be rejected
+            according rejection handler.
+     */
 // https://notebook.zohopublic.in/public/notes/74tdo0e297bb7d6dd4d45a837d13f60fedc3f
 }
 
